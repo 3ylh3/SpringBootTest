@@ -8,7 +8,6 @@
     <label>请输入姓名：</label>
     <input id="name"/>
     <button id="confirm">提交</button>
-    <input id="message" />
 <script>
     $(document).ready(function(){
         $("#confirm").click(function () {
@@ -21,7 +20,7 @@
                 url : "/hello",
                 data : param,
                 success : function(data){
-                    alert(data.msg);
+                    alert(data.message);
                 }
             });
         });
