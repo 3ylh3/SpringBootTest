@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文档标题</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <label>请输入姓名：</label>
+    <input id="name"/>
+    <button id="confirm">提交</button>
+    <input id="message" />
+<script>
+    $(document).ready(function(){
+        $("#confirm").click(function () {
+            var name = $("#name").val();
+            var param ={name:name};
+            $.ajax({
+                timeout : 20000,
+                type : "POST",
+                dataType : "JSON",
+                url : "/hello",
+                data : param,
+                success : function(data){
+                    alert(data.msg);
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
